@@ -33,7 +33,9 @@ Schedules job named `name` for immediate execution.
 
 To add a job, simply call:
 
-    add_job('hello_world', 2500, function() { console.log("Hello world!"); })
+    add_job('hello_world', 2500, function() {
+      console.log("Hello world!");
+    })
 
 Then to cancel it later:
 
