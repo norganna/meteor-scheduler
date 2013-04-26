@@ -1,7 +1,7 @@
 var _scheduled_jobs = {};
 
-function add_job(name, every, callback, options) {
-  if ('string' !== typeof name) {
+add_job = function add_job(name, every, callback, options) {
+	if ('string' !== typeof name) {
 		console.log('Must supply name for job');
 		return;
 	}
@@ -31,11 +31,11 @@ function add_job(name, every, callback, options) {
 	};
 }
 
-function stop_job(name) {
+stop_job = function stop_job(name) {
 	delete _scheduled_jobs[name];
 }
 
-function trigger_job(name) {
+trigger_job = function trigger_job(name) {
 	if (_scheduled_jobs[name]) {
 		_scheduled_jobs[name].next_run = 0;
 	}
